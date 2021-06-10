@@ -20,7 +20,7 @@ app.use(enforce.HTTPS({ trustProtoHeader: true }));
 app.use(cors({ origin: true }));
 
 
-app.get('/home', (req, res) => {
+app.get('/', (req, res) => {
     res.render('home')
 });
 
