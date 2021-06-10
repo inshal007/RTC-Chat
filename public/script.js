@@ -223,7 +223,7 @@ document.querySelector('.fa-chromecast').addEventListener('click', () => {
                 return e.track.kind == screenTrack.kind;
             })
             sender.replaceTrack(screenTrack);
-        
+        }
         screenTrack.onended = function() {
             stopScreenShare();
         }
