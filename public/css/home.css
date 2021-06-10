@@ -1,0 +1,433 @@
+html {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 0;
+}
+
+.theme-light {
+    --bg-color: #ecedf1;
+    --text-color: black;
+    --text-heading: black;
+    --nav-hover: #386e92;
+    --nav: #DE354C;
+    --button-color: #121212;
+    --container-color: radial-gradient(circle, #0078d4, #1369d5, #3358d3, #4f43cc, #6824c0);
+    --btn-color: #67a4c3;
+    --btn-hover: #76a4bc;
+}
+
+.theme-dark {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --text-heading: #82b6fc;
+    --nav: #ffffff;
+    --nav-hover: #82b6fc;
+    --button-color: #ebedf3;
+    --container-color: linear-gradient(to right bottom, #0c0f1f, #313e51, #5a7387, #86acbf, #b7e9f7);
+    --btn-color: #ffc02a;
+    --btn-hover: #ffc947;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 50px;
+    margin-top: 15px;
+}
+
+.navbrand a {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 2.5em;
+    color: var(--text-color);
+}
+
+.navbrand :hover {
+    text-decoration: none;
+}
+
+.nav-links li {
+    display: inline;
+    list-style: none;
+    text-decoration: none;
+    padding-right: 3em;
+    margin-right: 75px;
+}
+
+.nav-links a {
+    color: var(--nav);
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+    transition: all 0.3s ease 0s;
+}
+
+.nav-links ul :hover {
+    text-decoration: none;
+    color: var(--nav-hover);
+}
+
+.container {
+    text-align: left;
+    position: absolute;
+    top: 350px;
+    left: 50px;
+    font-family: 'Lato', sans-serif;
+    color: var(--text-heading);
+    max-width: 500px;
+    margin: auto;
+}
+
+.container p {
+    font-size: 35px;
+    font-weight: 300;
+    font-family: 'Lato', sans-serif;
+    max-width: 500px;
+    margin: auto;
+    color: var(--text-color);
+}
+
+.picture {
+    display: flex;
+}
+
+#light {
+    display: flex;
+    position: absolute;
+    top: 125px;
+    left: 825px;
+}
+
+#dark {
+    display: none;
+    position: absolute;
+    top: 125px;
+    left: 800px;
+}
+
+.support {
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    z-index: 15;
+    top: 130%;
+    left: 50%;
+    margin: -100px 0 0 -150px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.support h4 {
+    font-size: 2rem;
+    color: var(--text-heading);
+    text-align: center;
+}
+
+.support p {
+    text-align: center;
+    color: var(--text-color);
+    position: relative;
+    top: 20px;
+}
+
+.support .fa-chrome {
+    position: relative;
+    top: 10px;
+    color: var(--text-color);
+    height: 17%;
+    width: 17%;
+}
+
+.support .fa-firefox {
+    position: relative;
+    top: 10px;
+    color: var(--text-color);
+    height: 17%;
+    width: 17%;
+}
+
+.support .fa-safari {
+    position: relative;
+    top: 10px;
+    color: var(--text-color);
+    height: 17%;
+    width: 17%;
+}
+
+.support .fa-edge {
+    position: relative;
+    top: 10px;
+    color: var(--text-color);
+    height: 17%;
+    width: 17%;
+}
+
+.button a {
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 1000;
+    color: black;
+    text-decoration: none;
+}
+
+.button {
+    background-color: var(--btn-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    position: relative;
+    top: 20px;
+    transition: all 0.3s ease 0s;
+}
+
+.button:hover {
+    background-color: var(--btn-hover);
+}
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+.label {
+    background-color: black;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    height: 25px;
+    width: 50px;
+    transform: scale(1.5);
+    position: absolute;
+    top: 30px;
+    left: 1830px;
+}
+
+.label .ball {
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    height: 22px;
+    width: 22px;
+    transform: translateX(0px);
+    transition: transform 0.2s linear;
+}
+
+.checkbox:checked+.label .ball {
+    transform: translateX(24px);
+}
+
+.fa-moon {
+    color: #f1c40f;
+}
+
+.fa-sun {
+    color: #f39c12;
+}
+
+.footer-distributed {
+    background-color: #292c2f;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100vw !important;
+    font: bold 16px sans-serif;
+    text-align: left;
+    padding: 30px 30px 30px;
+    margin-top: 80px;
+    overflow: hidden;
+    position: relative;
+    top: 1200px;
+}
+
+
+/* Footer left */
+
+.footer-distributed .footer-left {
+    float: left;
+}
+
+
+/* The company logo */
+
+.footer-distributed h3 {
+    color: #ffffff;
+    font: normal 36px 'Cookie', cursive;
+    margin: 0 0 10px;
+}
+
+.footer-distributed h3 span {
+    color: #5383d3;
+}
+
+
+/* Footer links */
+
+.footer-distributed .footer-links {
+    color: #ffffff;
+    margin: 0 0 10px;
+    padding: 0;
+}
+
+.footer-distributed .footer-links a {
+    display: inline-block;
+    line-height: 1.8;
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer-distributed .footer-company-name {
+    color: #8f9296;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+}
+
+
+/* Footer social icons */
+
+.footer-distributed .footer-icons {
+    margin-top: 40px;
+}
+
+.footer-distributed .footer-icons a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    background-color: #33383b;
+    border-radius: 2px;
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 35px;
+    margin-right: 3px;
+    margin-bottom: 5px;
+}
+
+
+/* Footer Right */
+
+.footer-distributed .footer-right {
+    float: right;
+}
+
+.footer-distributed .footer-right p {
+    display: inline-block;
+    vertical-align: top;
+    margin: 15px 42px 0 0;
+    color: #ffffff;
+}
+
+
+/* The contact form */
+
+.footer-distributed form {
+    display: inline-block;
+}
+
+.footer-distributed form input,
+.footer-distributed form textarea {
+    display: block;
+    border-radius: 3px;
+    box-sizing: border-box;
+    background-color: #1f2022;
+    box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1);
+    border: none;
+    resize: none;
+    font: inherit;
+    font-size: 14px;
+    font-weight: normal;
+    color: #d1d2d2;
+    width: 400px;
+    padding: 18px;
+}
+
+.footer-distributed ::-webkit-input-placeholder {
+    color: #5c666b;
+}
+
+.footer-distributed ::-moz-placeholder {
+    color: #5c666b;
+    opacity: 1;
+}
+
+.footer-distributed :-ms-input-placeholder {
+    color: #5c666b;
+}
+
+.footer-distributed form input {
+    height: 55px;
+    margin-bottom: 15px;
+}
+
+.footer-distributed form textarea {
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+.footer-distributed form button {
+    border-radius: 3px;
+    background-color: #33383b;
+    color: #ffffff;
+    border: 0;
+    padding: 15px 50px;
+    font-weight: bold;
+    float: right;
+}
+
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 1000px) {
+    .footer-distributed {
+        font: bold 14px sans-serif;
+    }
+    .footer-distributed .footer-company-name {
+        font-size: 12px;
+    }
+    .footer-distributed form input,
+    .footer-distributed form textarea {
+        width: 250px;
+    }
+    .footer-distributed form button {
+        padding: 10px 35px;
+    }
+}
+
+@media (max-width: 800px) {
+    .footer-distributed {
+        padding: 30px;
+    }
+    .footer-distributed .footer-left,
+    .footer-distributed .footer-right {
+        float: none;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    .footer-distributed .footer-left {
+        margin-bottom: 40px;
+    }
+    .footer-distributed form {
+        margin-top: 30px;
+    }
+    .footer-distributed form {
+        display: block;
+    }
+    .footer-distributed form button {
+        float: none;
+    }
+}
