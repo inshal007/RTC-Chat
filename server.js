@@ -10,7 +10,7 @@ const peerServer = ExpressPeerServer(server, {
     debug: true,
     path: "/"
 });
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 2020;
 
 const users = {};
 
