@@ -1,4 +1,4 @@
-const socket = io(location.hostname);
+const socket = io('/');
 const videogrid = document.getElementById('video-grid');
 const myVideo = document.createElement('video');
 myVideo.muted = true;

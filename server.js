@@ -7,8 +7,7 @@ const { ExpressPeerServer } = require('peer');
 const cors = require("cors");
 const enforce = require("express-sslify");
 const peerServer = ExpressPeerServer(server, {
-    debug: true,
-    path: "/"
+    debug: true
 });
 const port = process.env.PORT || 2020;
 
