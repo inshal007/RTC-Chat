@@ -10,6 +10,7 @@ const enforce = require("express-sslify");
 const peerServer = ExpressPeerServer(server, {
     debug: true
 });
+const port = process.env.PORT || 2020;
 
 
 const users = {};
@@ -60,4 +61,4 @@ io.on("disconnect", () => {
     socket.to(roomID).broadcast.emit("user-disconnected", userId, username);
 })
 
-server.listen(process.env.PORT || 2020);
+server.listen(port);
