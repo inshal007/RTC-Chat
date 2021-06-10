@@ -6,10 +6,11 @@ const io = require('socket.io')(server);
 const { ExpressPeerServer } = require('peer');
 const cors = require("cors");
 const enforce = require("express-sslify");
+
 const peerServer = ExpressPeerServer(server, {
     debug: true
 });
-const port = process.env.PORT || 2020;
+
 
 const users = {};
 
@@ -17,9 +18,9 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(enforce.HTTPS({ trustProtoHeader: true }));
 app.use(cors({ origin: true }));
-app.use("/peerjs", peerServer);
 
-app.get('/', (req, res) => {
+
+app.get('/home', (req, res) => {
     res.render('home')
 });
 
@@ -32,11 +33,11 @@ app.get('/join', (req, res) => {
 });
 
 app.use('/peerjs', peerServer);
-app.get('/call', (req, res) => {
+app.get('/room', (req, res) => {
     res.redirect(`/${uuidv4()}`)
 })
 
-app.get('/:call', (req, res) => {
+app.get('/:room', (req, res) => {
     res.render('room', { roomId: req.params.room })
 })
 
@@ -59,4 +60,4 @@ io.on("disconnect", () => {
     socket.to(roomID).broadcast.emit("user-disconnected", userId, username);
 })
 
-server.listen(port);
+server.listen(process.env.PORT || 2020);
