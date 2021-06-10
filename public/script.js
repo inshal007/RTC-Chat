@@ -4,8 +4,8 @@ const myVideo = document.createElement('video');
 myVideo.muted = true;
 const peer = new Peer(undefined, {
 
-    host: location.hostname,
-    port: location.port,
+    host: '/',
+    port: '443',
     path: '/peerjs',
 
 })
