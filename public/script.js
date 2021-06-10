@@ -216,10 +216,10 @@ document.querySelector('.fa-chromecast').addEventListener('click', () => {
         }
 
     }).then(stream => {
-        const screenTrack = stream.getTracks()[0];
+        let screenTrack = stream.getTracks()[0];
 
-        
-            const sender = currentPeer.getSender().find(function(e) {
+        for (let x = 0; x < peers.length; x++) {
+            let sender = peers[x].getSender().find(function(e) {
                 return e.track.kind == screenTrack.kind;
             })
             sender.replaceTrack(screenTrack);
@@ -232,10 +232,11 @@ document.querySelector('.fa-chromecast').addEventListener('click', () => {
 
 const stopScreenShare = () => {
     let videoTrack = myvideoStream.getVideoTracks()[0];
-    
-        let sender = currentPeer.getSender().find(function(s) {
+    for (let x = 0; x < peers.length; x++) {
+        let sender = peers[x].getSender().find(function(s) {
             return s.track.kind == videoTrack.kind;
         })
+        
         sender.replaceTrack(videoTrack);
     
 }
