@@ -9,7 +9,7 @@ A audio-video chat application using WEBRTC and Nodejs allowing broswers to have
 - uuid - used to create room id.
 - npm - Package manager.
 - git - Version Control.
-- Heroku - Deploymening the application.
+- Heroku - Deploying the application.
 
 # NOTE
 The app isn't responsive(not mobile friendly). And only clients on the same subnet can have realtime p2p audio and video chat, since i havent set up a STUN server.
