@@ -5,7 +5,7 @@ myVideo.muted = true;
 const peer = new Peer(undefined, {
 
     host: location.hostname,
-    port: location.port || (location.protocol === "https:" ? 443 : 2020),
+    port: location.port,
     path: '/peerjs',
 
 })
