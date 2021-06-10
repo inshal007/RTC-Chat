@@ -8,7 +8,8 @@ const peer = new Peer(undefined, {
     port: location.port || (location.protocol === "https:" ? 443 : 80),
 
 })
-var currentPeer = [];
+var currentPeer;
+var peers = [];
 var myID = "";
 
 var myvideoStream;
@@ -40,7 +41,7 @@ navigator.mediaDevices.getUserMedia({
 });
 
 socket.on("user-disconnected", (userId) => {
-    currentPeer[userId].close();
+    peers[userId].close();
 });
 
 
@@ -71,7 +72,7 @@ const connectToNewUser = (userId, stream) => {
         video.remove();
     });
 
-    currentPeer[userId] = call;
+    peers[userId] = call;
 }
 
 
@@ -217,12 +218,12 @@ document.querySelector('.fa-chromecast').addEventListener('click', () => {
     }).then(stream => {
         const screenTrack = stream.getTracks()[0];
 
-        for (let x = 0; x < currentPeer.length; x++) {
-            const sender = currentPeer[x].getSender().find(function(e) {
+        
+            const sender = currentPeer.getSender().find(function(e) {
                 return e.track.kind == screenTrack.kind;
             })
             sender.replaceTrack(screenTrack);
-        }
+        
         screenTrack.onended = function() {
             stopScreenShare();
         }
@@ -231,12 +232,12 @@ document.querySelector('.fa-chromecast').addEventListener('click', () => {
 
 const stopScreenShare = () => {
     let videoTrack = myvideoStream.getVideoTracks()[0];
-    for (let x = 0; x < currentPeer.length; x++) {
-        let sender = currentPeer[x].getSender().find(function(s) {
+    
+        let sender = currentPeer.getSender().find(function(s) {
             return s.track.kind == videoTrack.kind;
         })
         sender.replaceTrack(videoTrack);
-    }
+    
 }
 
 const togglechat = () => {
