@@ -1,12 +1,11 @@
-const socket = io('/');
+const socket = io(location.hostname);
 const videogrid = document.getElementById('video-grid');
 const myVideo = document.createElement('video');
 myVideo.muted = true;
 const peer = new Peer(undefined, {
-
-    host: '/',
-    port: '443',
     path: '/peerjs',
+    host: location.hostname,
+    port: location.port || (location.protocol === "https:" ? 443 : 2020)
 
 })
 var currentPeer = [];
