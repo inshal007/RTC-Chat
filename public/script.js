@@ -4,8 +4,13 @@ const myVideo = document.createElement('video');
 myVideo.muted = true;
 const peer = new Peer(undefined, {
     path: '/peerjs',
+<<<<<<< HEAD
     host: location.hostname,
     port: location.port || (location.protocol === "https:" ? 443 : 2020)
+=======
+    host: '/,
+    port: '443'
+>>>>>>> d91ccb5a8973a9a2f49aa5fbf4e93e39a1ba4e38
 })
 var currentPeer = [];
 var myID = "";
