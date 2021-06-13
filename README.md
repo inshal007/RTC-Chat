@@ -16,5 +16,5 @@ The app isn't responsive(not mobile friendly). And only clients on the same subn
 
 
 # DEMO
-[I'm an inline-style link] (https://rtc-chat.herokuapp.com/)
+ https://rtc-chat.herokuapp.com/
 The page haven't been made responsive and its just some messy code :sweat_smile: so please forgive for the inconvenience caused.
