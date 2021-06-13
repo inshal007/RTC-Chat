@@ -15,3 +15,6 @@ A audio-video chat application using WEBRTC and Nodejs allowing broswers to have
 The app isn't responsive(not mobile friendly). And only clients on the same subnet can have realtime p2p audio and video chat, since i havent set up a STUN server.
 
 
+#DEMO
+[I'm an inline-style link] (https://rtc-chat.herokuapp.com/)
+The page haven't been made responsive and its just some messy code :sweat_smile: so please forgive for the inconvenience caused.
